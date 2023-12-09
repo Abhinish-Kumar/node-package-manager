@@ -87,17 +87,52 @@ it is used to initialize you package.
 7. The npm is able to edit this file by itself.
 
 
+### How to install packages?
+
+Shortcut to install lodash
+```javascript
+
+>>>>npm i <name-of-package>
+
+```
+i is here for install.
+If you install it second time npm just upadate your previous module.
 
 
+### How to remove packages with npm?
 
+Use this command 
+```javascript
 
+>>>>npm remove <name-of-package>
+>>>>npm remove lodash
 
+>>>>npm uninstall lodash
 
+```
 
+remove and uninstall both work
 
+### Local vs Global packages?
+Local means you install all the packages into your folder and Global means you install package in your system.
 
+```javascript
 
+>>>>npm install create-react-app --global
+>>>>npm install create-react-app -g
 
+```
+
+it install your react app globally.Dont install global packages.
+To check the installed global modules in your system use this command
+```javascript
+
+>>>>npm root -g
+>>>>npm root --global
+>>>>GO TO THAT FOLDER AND
+>>>>folderopend/dir
+
+```
 
 
 
