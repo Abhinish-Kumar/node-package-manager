@@ -133,6 +133,62 @@ To check the installed global modules in your system use this command
 >>>>folderopend/dir
 
 ```
+### NPM dependencies Intro..
+
+#### Sementic versioning in npm
+whenever you install packes from npm.
+Every package has some version number. Three numbers with two dots
+
+```javascript
+
+>>>>version 16.13.1
+
+```
+
+
+This because npm follow sementic versioning of package.
+Sementic versioning is a standard or guidlines to version your package.
+
+It follows 
+
+```javascript
+
+>>>>major.minor.patch
+>>>>16 is the major number 
+>>>>13 is the minor number 
+>>>>1 is the patch number
+
+```
+
+1. MAJOR version when you make incompatible API,changes.
+2. MINOR version when you add functionality in a backwords compatible manner.
+3. PATCH version when you make backwards compatible bug fixes.(useless for you)
+
+
+### package-lock.json
+There is such file before npm 5.
+When you delete nodemodule folder and its dependencies are included in package.json then npm knows that these included dependencies are required for your project.
+SO when to get back these packages run
+```javascript
+
+>>>npm install
+
+```
+
+to install any version of lodash first delete nodemodule folder and change the version of lodash in package.json.and run this command
+
+```javascript
+
+>>>npm install
+
+```
+It install the maximum version of MAJOR version.like version 4.22.3 is installed if full make requiest to install version 4.0.0
+Package-lock.json hold each and every dependency.If we install lodash dependency it also install all the dependencies that are dependent on lodash.It locks all the dependencies because it contain all the liks of dependencies from where they are installed so that you can use the same as it is code in other system as well.We see so many errors in this cases because if the dependecy is updated that is not working with our current version of lodash then it will show you an error and ulter the funcitonality of your project.
+
+
+
+
+
 
 
 
