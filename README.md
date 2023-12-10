@@ -336,6 +336,7 @@ By using NPX
 ##### Another use of npx is to run global binaries.
 npx install the package runs it and uninsall the package (thats why we use it in 'create-react-app' because we no need to create the app so many times) so installing it globally is not a good idea for you.
 
+#25
 
 
 
