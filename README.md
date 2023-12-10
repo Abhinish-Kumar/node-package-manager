@@ -185,7 +185,156 @@ to install any version of lodash first delete nodemodule folder and change the v
 It install the maximum version of MAJOR version.like version 4.22.3 is installed if full make requiest to install version 4.0.0
 Package-lock.json hold each and every dependency.If we install lodash dependency it also install all the dependencies that are dependent on lodash.It locks all the dependencies because it contain all the liks of dependencies from where they are installed so that you can use the same as it is code in other system as well.We see so many errors in this cases because if the dependecy is updated that is not working with our current version of lodash then it will show you an error and ulter the funcitonality of your project.
 
+### More on sementic versioning
+NPM install highest version of lodash insted of installing version 4.0.0 --- 4.17.1
+NPM install the latest or highest version because of carat sign in the version.
 
+```javascript
+
+>>>>"lodash":"^4.0.0",
+
+```
+
+
+This charat sign shows that if the major number is same just upgrade the MINOR and PATCH number as possible as you can.
+
+##### To make same MINOR and MAJOR number use 
+
+```javascript
+
+>>>> "lodash":"~4.0.X"
+
+```
+here npm will update only the patch version as possible as you can.
+By default npm uses ^.
+
+
+
+##### To install exact that package remove all the signs in front of version number.
+
+```javascript
+
+>>>> "lodash":"12.12.3",
+>>>>npm install
+
+```
+
+### What are dependencies?
+we also have dev-deoendencies and pear-dependencies.
+
+Whenever you install any package it goes to the package.json dependencies object
+
+```javascript
+
+>>>>npm i express
+
+```
+npm update the things which is present in the "dependencies" just do "npm install".directly depends on our project.
+
+### dev-dependencies
+
+these dependencies are used during development process like bundle file(webpack,babble).These files are not really required to run your application.Lodash ir required to run your application because your javascript wouldcrash without it.
+
+
+```javascript
+
+>>>>npm install webpack --save-dev
+
+```
+
+NPM install it in devdependencies object in json file.
+
+
+##### To make your computer a server
+
+```javascript
+
+>>>>echo $node_env
+>>>>node_env="production" npm install
+
+```
+webpack is not installed because you are now in production mode and in production mode only dependencies are installed.And in development phase you only need dev-dependencied.THis is the difference between dev-dependencies and dependencies that all the stuff goes to dev-dependencies which is not required for production.The things goes to dependencies which are used by your application or required to run your application.
+
+### Pear-dependencies.
+It is used to create npm package.Pear-dependecy is not really a dependency which is strictly required.
+
+```javascript
+
+>>>>npm install react-dom
+
+```
+
+Its a renderor for react for the web.It is installed as pear-dependencies because it tells us that we donot have react but we want to use its component.NPM gives you a warning to install reacr first but it does not force you that its a compulsary.
+
+## NPM scripts
+You can see a section called script in your package.json file.This is an object in json that hold key value pair.You have a certain key as a script name and a value or bash script as a value.You can write here your actual terminal script here (https://docs.npmjs.com/cli/v6/using-npm/scripts) 
+
+```javascript
+
+"script":{
+"start":"echo 'This script was called'",
+}
+
+>>>>npm start
+>>>>npm run start
+
+```
+##### Create a custom script
+
+```javascript
+
+"script":{
+"custom_script":"echo 'This is a custom script'",
+}
+
+>>>>npm custom_script (does not work)
+>>>>npm run custom_script 
+
+```
+Run says that heyy i am trying to run a script which might not be available in our predefined script. 
+Predefined scripts like 'start' runs without using 'run' script.You can define  your lonag script in jsons script section and give it a name("key") and whenever you hit the key the corresponding script will run.
+
+
+## NPX (introdued in npm 5.2 and above)
+Its a npm extended.
+It runs global binaries from npm withour installing them like "create-react-app" 
+
+1. running local binaries:-
+```javascript
+
+>>>>npm install cowsay
+
+```
+It is installed in json file.
+but How do you use it directly 
+
+```javascript
+
+>>>>node ./node_modules/cowsay/cli.js hello
+
+```
+By using NPX 
+
+```javascript
+"script":{
+"saysomething":"cowsay hello"
+}
+
+
+>>>>npm run saysomething
+
+```
+
+
+```javascript
+
+>>>>npx cowsay hello
+
+```
+
+
+##### Another use of npx is to run global binaries.
+npx install the package runs it and uninsall the package (thats why we use it in 'create-react-app' because we no need to create the app so many times) so installing it globally is not a good idea for you.
 
 
 
